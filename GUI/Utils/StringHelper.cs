@@ -8,9 +8,10 @@ namespace MenuStripGUI.Utils
     {
         public static string ClearRedundantText(string text)
         {
-            text = text.Replace("\r\n", String.Empty);
-            text = text.Replace("\n", String.Empty);
-            text = text.Replace(" ", String.Empty);
+            text = text.Replace("\r\n", String.Empty)
+                .Replace("\t", String.Empty)
+                .Replace("\n", String.Empty)
+                .Replace(" ", String.Empty);
             return text;
         }
 
