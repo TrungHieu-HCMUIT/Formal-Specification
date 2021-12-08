@@ -56,7 +56,6 @@
     <Compile Include="Model\ExplicitPostBaseModel.cs" />
     <Compile Include="Model\ExplicitTwoLoopPostModel.cs" />
     <Compile Include="Model\ImplicitPostExpressionModel.cs" />
-    <Compile Include="Test.cs" />
     <Compile Include="Utils\Const.cs" />
     <Compile Include="Utils\FormalLanguageDataType.cs" />
     <Compile Include="Handler\DataMapper.cs" />

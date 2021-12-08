@@ -20,11 +20,12 @@ namespace MenuStripGUI
 {
     public partial class MainForm : Form
     {
-        public string selected_txb { get; private set; }
+        public string helpMessage = " This is a tool for generating programming language with: \r\n - Input text: a formal specification function (implicit) \r\n - Output text: a completing program which uses C# programming language. \r\n - Support operators: +, -, *, /, %, >, <, =, !=, >=, <=, !, &&, ||";
+        public string selectedTxb { get; private set; }
 
         public MainForm()
         {
-            selected_txb = "";
+            selectedTxb = "";
             InitializeComponent();
         }
 
@@ -179,26 +180,19 @@ namespace MenuStripGUI
         }
         private void helpToolStripButton_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult2 = MessageBox.Show(" This is a tool for generating programming language with: \r\n - Input text: a formal specification function (implicit) \r\n - Output text: a completing program which uses C# programming language. \r\n - Support operators: +, -, *, /, %, >, <, =, !=, >=, <=, !, &&, ||", "Formular Specification Generating Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            if (dialogResult2 == DialogResult.OK)
-            {
-            }
-        }
-        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult2 = MessageBox.Show(" This is a tool for generating programming language with: \r\n - Input text: a formal specification function (implicit) \r\n - Output text: a completing program which uses C# programming language. \r\n - Support operators: +, -, *, /, %, >, <, =, !=, >=, <=, !, &&, ||", "Formular Specification Generating Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            DialogResult dialogResult2 = MessageBox.Show(helpMessage, "Formal Specification Generating Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
             if (dialogResult2 == DialogResult.OK)
             {
             }
         }
         private void cutToolStripButton_Click(object sender, EventArgs e)
         {
-            if (selected_txb == "input")
+            if (selectedTxb == "input")
             {
                 Clipboard.SetText(txbInput.SelectedText);
                 txbInput.SelectedText = "";
             }
-            else if (selected_txb == "name")
+            else if (selectedTxb == "name")
             {
                 Clipboard.SetText(txbName.SelectedText);
                 txbName.SelectedText = "";
@@ -207,11 +201,11 @@ namespace MenuStripGUI
 
         private void copyToolStripButton_Click(object sender, EventArgs e)
         {
-            if (selected_txb == "input")
+            if (selectedTxb == "input")
             {
                 Clipboard.SetText(txbInput.SelectedText);
             }
-            else if (selected_txb == "name")
+            else if (selectedTxb == "name")
             {
                 Clipboard.SetText(txbName.SelectedText);
             }
@@ -219,11 +213,11 @@ namespace MenuStripGUI
 
         private void pasteToolStripButton_Click(object sender, EventArgs e)
         {
-            if (selected_txb == "input")
+            if (selectedTxb == "input")
             {
                 txbInput.SelectedText = Clipboard.GetText();
             }
-            else if (selected_txb == "name")
+            else if (selectedTxb == "name")
             {
                 txbName.SelectedText = Clipboard.GetText();
             }
@@ -239,17 +233,17 @@ namespace MenuStripGUI
 
         private void txbInput_MouseDown(object sender, MouseEventArgs e)
         {
-            selected_txb = "input";
+            selectedTxb = "input";
         }
 
         private void txbName_MouseDown(object sender, MouseEventArgs e)
         {
-            selected_txb = "name";
+            selectedTxb = "name";
         }
 
         private void txbExeName_MouseDown(object sender, MouseEventArgs e)
         {
-            selected_txb = "exe";
+            selectedTxb = "exe";
             openFileDialog1.ShowDialog();
             try
             {
@@ -266,37 +260,37 @@ namespace MenuStripGUI
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
-            selected_txb = "";
+            selectedTxb = "";
         }
 
         private void txbGenerate_MouseDown(object sender, MouseEventArgs e)
         {
-            selected_txb = "";
+            selectedTxb = "";
         }
 
         private void lbClassName_MouseDown(object sender, MouseEventArgs e)
         {
-            selected_txb = "";
+            selectedTxb = "";
         }
 
         private void lbExeName_MouseDown(object sender, MouseEventArgs e)
         {
-            selected_txb = "";
+            selectedTxb = "";
         }
 
         private void btnGenerate_MouseDown(object sender, MouseEventArgs e)
         {
-            selected_txb = "";
+            selectedTxb = "";
         }
       
         private void cutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (selected_txb == "input")
+            if (selectedTxb == "input")
             {
                 Clipboard.SetText(txbInput.SelectedText);
                 txbInput.SelectedText = "";
             }
-            else if (selected_txb == "name")
+            else if (selectedTxb == "name")
             {
                 Clipboard.SetText(txbName.SelectedText);
                 txbName.SelectedText = "";
@@ -305,11 +299,11 @@ namespace MenuStripGUI
 
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (selected_txb == "input")
+            if (selectedTxb == "input")
             {
                 Clipboard.SetText(txbInput.SelectedText);
             }
-            else if (selected_txb == "name")
+            else if (selectedTxb == "name")
             {
                 Clipboard.SetText(txbName.SelectedText);
             }
@@ -317,11 +311,11 @@ namespace MenuStripGUI
 
         private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (selected_txb == "input")
+            if (selectedTxb == "input")
             {
                 txbInput.SelectedText = Clipboard.GetText();
             }
-            else if (selected_txb == "name")
+            else if (selectedTxb == "name")
             {
                 txbName.SelectedText = Clipboard.GetText();
             }

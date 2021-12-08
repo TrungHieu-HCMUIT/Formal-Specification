@@ -105,7 +105,7 @@ namespace MenuStripGUI.Model
 
         private void AppendLoopCodeTypeVM_VM(ref List<string> scriptList, string codeExpression)
         {
-            string secondForLine = string.Format("\t\t\t\tfor| (|int| {0} = {1} - 1; {0} <= {2} - 1; {0}++)", this.indexVariableNameSecondLoop, startRangeSecondLoop, endRangeSecondLoop);
+            string secondForLine = string.Format("\t\t\t\tfor| (|int| {0} = {1}; {0} <= {2} - 1; {0}++)", this.indexVariableNameSecondLoop, startRangeSecondLoop, endRangeSecondLoop);
             scriptList.Add(secondForLine);
 
             scriptList.Add("\t\t\t\t{");
@@ -121,7 +121,7 @@ namespace MenuStripGUI.Model
             string flagVariable = "check_" + arrayName;
             scriptList.Add(string.Format("\t\t\t\tbool| {0} = false;", flagVariable));
 
-            string secondForLine = string.Format("\t\t\t\tfor| (|int| {0} = {1} - 1; {0} <= {2} - 1; {0}++)", this.indexVariableNameSecondLoop, startRangeSecondLoop, endRangeSecondLoop);
+            string secondForLine = string.Format("\t\t\t\tfor| (|int| {0} = {1}; {0} <= {2} - 1; {0}++)", this.indexVariableNameSecondLoop, startRangeSecondLoop, endRangeSecondLoop);
             scriptList.Add(secondForLine);
 
             scriptList.Add("\t\t\t\t{");
@@ -136,7 +136,7 @@ namespace MenuStripGUI.Model
         }
         private void AppendLoopCodeTypeTT_TT(ref List<string> scriptList, string codeExpression)
         {
-            string secondForLine = string.Format("\t\t\t\tfor| (|int| {0} = {1} - 1; {0} <= {2} - 1; {0}++)", this.indexVariableNameSecondLoop, startRangeSecondLoop, endRangeSecondLoop);
+            string secondForLine = string.Format("\t\t\t\tfor| (|int| {0} = {1}; {0} <= {2} - 1; {0}++)", this.indexVariableNameSecondLoop, startRangeSecondLoop, endRangeSecondLoop);
             scriptList.Add(secondForLine);
 
             scriptList.Add("\t\t\t\t{");
@@ -149,12 +149,12 @@ namespace MenuStripGUI.Model
         }
         private void AppendLoopCodeTypeTT_VM(ref List<string> scriptList, string codeExpression)
         {
-            string secondForLine = string.Format("\t\t\t\tfor| (|int| {0} = {1} - 1; {0} <= {2} - 1; {0}++)", this.indexVariableNameSecondLoop, startRangeSecondLoop, endRangeSecondLoop);
+            string secondForLine = string.Format("\t\t\t\tfor| (|int| {0} = {1}; {0} <= {2} - 1; {0}++)", this.indexVariableNameSecondLoop, startRangeSecondLoop, endRangeSecondLoop);
             scriptList.Add(secondForLine);
 
             scriptList.Add("\t\t\t\t{");
-            scriptList.Add(string.Format("\t\t\t\t\tif| ({0})", codeExpression) + " break;");
-            scriptList.Add("\t\t\t\t\treturn| true;");
+            scriptList.Add(string.Format("\t\t\t\t\tif| (!({0}))", codeExpression) + " break;");
+            scriptList.Add(string.Format("\t\t\t\t\tif| ({0} == {1} - 1)| return| true;", this.indexVariableNameSecondLoop, endRangeSecondLoop));
             scriptList.Add("\t\t\t\t}");
 
             scriptList.Add("\t\t\t}");
