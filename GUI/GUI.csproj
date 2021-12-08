@@ -49,13 +49,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Handler\BaseFormalLanguageHandler.cs" />
-    <Compile Include="Handler\ExplicitTypeHandler.cs" />
-    <Compile Include="Handler\ImplicitTypeHandler.cs" />
+    <Compile Include="Handler\Type2Handler.cs" />
+    <Compile Include="Handler\Type1Handler.cs" />
     <Compile Include="Handler\InputHandler.cs" />
-    <Compile Include="Model\ExplicitOneLoopPostModel.cs" />
-    <Compile Include="Model\ExplicitPostBaseModel.cs" />
-    <Compile Include="Model\ExplicitTwoLoopPostModel.cs" />
-    <Compile Include="Model\ImplicitPostExpressionModel.cs" />
+    <Compile Include="Model\Type2OneLoopPostModel.cs" />
+    <Compile Include="Model\Type2PostBaseModel.cs" />
+    <Compile Include="Model\Type2TwoLoopPostModel.cs" />
+    <Compile Include="Model\Type1PostExpressionModel.cs" />
     <Compile Include="Utils\Const.cs" />
     <Compile Include="Utils\FormalLanguageDataType.cs" />
     <Compile Include="Handler\DataMapper.cs" />

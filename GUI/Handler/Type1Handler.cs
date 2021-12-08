@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 namespace MenuStripGUI.Handler
 {
-    class ImplicitTypeHandler: BaseFormalLanguageHandler
+    class Type1Handler: BaseFormalLanguageHandler
     {
-        public List<ImplicitPostExpressionModel> implicitPostExpressionModelList;
+        public List<Type1PostExpressionModel> implicitPostExpressionModelList;
 
-        public ImplicitTypeHandler(string functionInforLine, string preConditionLine, string postConditionLine)
+        public Type1Handler(string functionInforLine, string preConditionLine, string postConditionLine)
         {
-            this.typeID = FormalLanguageType.IMPLICIT;
+            this.typeID = FormalLanguageType.TYPE_1;
             this.functionInforLine = functionInforLine;
             this.preConditionLine = preConditionLine;
             this.postConditionLine = postConditionLine;
 
-            this.implicitPostExpressionModelList = new List<ImplicitPostExpressionModel>();
+            this.implicitPostExpressionModelList = new List<Type1PostExpressionModel>();
 
             base.GetFunctionInformation();
         }
@@ -91,7 +91,7 @@ namespace MenuStripGUI.Handler
             }
             else
             {
-                foreach (ImplicitPostExpressionModel model in implicitPostExpressionModelList)
+                foreach (Type1PostExpressionModel model in implicitPostExpressionModelList)
                 {
                     list.Add(string.Format("\t\t\t{0}", model.GenerateConditionScript()));
                     list.Add(string.Format("\t\t\t\t{0}", model.GenerateExecutionScript()));
@@ -126,7 +126,7 @@ namespace MenuStripGUI.Handler
                     else
                         conditionList.Add(expression);
                 }
-                this.implicitPostExpressionModelList.Add(new ImplicitPostExpressionModel(execution, conditionList));
+                this.implicitPostExpressionModelList.Add(new Type1PostExpressionModel(execution, conditionList));
             }
         }
     }

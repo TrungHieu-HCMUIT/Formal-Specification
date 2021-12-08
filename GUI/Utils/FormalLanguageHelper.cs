@@ -14,9 +14,9 @@ namespace MenuStripGUI.Utils
         {
             if (ContainsExplicitTypeKeywords(pre) || ContainsExplicitTypeKeywords(post))
             {
-                return FormalLanguageType.EXPLICIT;
+                return FormalLanguageType.TYPE_2;
             }
-            return FormalLanguageType.IMPLICIT;
+            return FormalLanguageType.TYPE_1;
         }
 
         private static bool ContainsExplicitTypeKeywords(string line)

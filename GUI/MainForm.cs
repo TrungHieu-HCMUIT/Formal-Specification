@@ -20,7 +20,7 @@ namespace MenuStripGUI
 {
     public partial class MainForm : Form
     {
-        public string helpMessage = " This is a tool for generating programming language with: \r\n - Input text: a formal specification function (implicit) \r\n - Output text: a completing program which uses C# programming language. \r\n - Support operators: +, -, *, /, %, >, <, =, !=, >=, <=, !, &&, ||";
+        public string helpMessage = " This is a tool for generating programming language with: \r\n - Input text: a formal specification function (Implicit) \r\n - Output text: a completing program which uses C# programming language. \r\n - Support operators: +, -, *, /, %, >, <, =, !=, >=, <=, !, &&, ||";
         public string selectedTxb { get; private set; }
 
         public MainForm()

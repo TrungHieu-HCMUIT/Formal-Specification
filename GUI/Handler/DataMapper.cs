@@ -34,11 +34,11 @@ namespace DataMapper
 
             switch (FormalLanguageHelper.GetFormalLanguageType(preConditionLine, postConditionLine))
             {
-                case FormalLanguageType.IMPLICIT:
-                    handlerModel = new ImplicitTypeHandler(functionInformationLine, preConditionLine, postConditionLine);
+                case FormalLanguageType.TYPE_1:
+                    handlerModel = new Type1Handler(functionInformationLine, preConditionLine, postConditionLine);
                     break;
-                case FormalLanguageType.EXPLICIT:
-                    handlerModel = new ExplicitTypeHandler(functionInformationLine, preConditionLine, postConditionLine);
+                case FormalLanguageType.TYPE_2:
+                    handlerModel = new Type2Handler(functionInformationLine, preConditionLine, postConditionLine);
                     break;
             }
 
@@ -100,7 +100,7 @@ namespace DataMapper
 
         public void MapToProcessFunction(ref List<string> outputScripts)
         {
-            if (handlerModel.typeID == FormalLanguageType.IMPLICIT) ExceptionPostHandler(ref handlerModel.postConditionLine);
+            if (handlerModel.typeID == FormalLanguageType.TYPE_1) ExceptionPostHandler(ref handlerModel.postConditionLine);
             else
             {
                 handlerModel.postConditionLine = handlerModel.postConditionLine.Remove(handlerModel.postConditionLine.Length - 1, 1);

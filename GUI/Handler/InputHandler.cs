@@ -53,7 +53,7 @@ namespace MenuStripGUI.Handler
         //Format and recolor for pre condition in input
         public string PostHandleForInput(string post)
         {
-            if (handlerModel.typeID == FormalLanguageType.IMPLICIT)
+            if (handlerModel.typeID == FormalLanguageType.TYPE_1)
             {
                 post = StringHelper.ClearParenthese(post);
                 string[] expressions = post.Split(new[] { "||" }, StringSplitOptions.None);
@@ -202,7 +202,7 @@ namespace MenuStripGUI.Handler
             splitedInput[2] = PostHandleForInput(splitedInput[2]);
             //Split to recolor post line
             string[] postSlpit = splitedInput[2].Split(new[] { "~" }, StringSplitOptions.None);
-            if (handlerModel.typeID == FormalLanguageType.IMPLICIT)
+            if (handlerModel.typeID == FormalLanguageType.TYPE_1)
             {
                 for (int k = 0; k < postSlpit.Length; k++)
                 {

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace MenuStripGUI.Model
 {
-    public class ExplicitOneLoopPostModel : ExplicitPostBaseModel
+    public class Type2OneLoopPostModel : Type2PostBaseModel
     {
-        public ExplicitOneLoopPostModel(string postValue, string arrayName, string parameterName)
+        public Type2OneLoopPostModel(string postValue, string arrayName, string parameterName)
         {
             this.arrayName = arrayName;
             this.parameterName = parameterName;
@@ -24,7 +24,7 @@ namespace MenuStripGUI.Model
             this.expression = splitedPostValue[1];
             this.loopType = loopInformation.Contains("VM") ? PostConditionType.VM : PostConditionType.TT;
 
-            this.indexVariableName = ExplicitPostBaseModel.GetIndexVariableNameFromClause(
+            this.indexVariableName = Type2PostBaseModel.GetIndexVariableNameFromClause(
                 loopInformation
                 .Split(new[] { "TH" }, StringSplitOptions.None)[0]
                 .Split(new[] { "(" }, StringSplitOptions.None)[1]);

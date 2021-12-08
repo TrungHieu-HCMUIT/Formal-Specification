@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace MenuStripGUI.Handler
 {
-    class ExplicitTypeHandler : BaseFormalLanguageHandler
+    class Type2Handler : BaseFormalLanguageHandler
     {
 
-        public ExplicitTypeHandler(string functionInforLine, string preConditionLine, string postConditionLine)
+        public Type2Handler(string functionInforLine, string preConditionLine, string postConditionLine)
         {
-            this.typeID = FormalLanguageType.EXPLICIT;
+            this.typeID = FormalLanguageType.TYPE_2;
             this.functionInforLine = functionInforLine;
             this.preConditionLine = preConditionLine;
             this.postConditionLine = postConditionLine;
@@ -93,7 +93,7 @@ namespace MenuStripGUI.Handler
             List<string> scriptList = new List<string>();
 
             List<string> valueParameterList = inputMap.Values.ToList();
-            ExplicitPostBaseModel explicitPostModel = ExplicitPostBaseModel.GetExplicitPostModel(postConditionLine,
+            Type2PostBaseModel explicitPostModel = Type2PostBaseModel.GetExplicitPostModel(postConditionLine,
                 GetParameterKeyFromValue(valueParameterList[0]),
                 GetParameterKeyFromValue(valueParameterList[1]));
 

@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace MenuStripGUI.Model
 {
-    public class ExplicitTwoLoopPostModel : ExplicitPostBaseModel
+    public class Type2TwoLoopPostModel : Type2PostBaseModel
     {
         public string startRangeSecondLoop;
         public string endRangeSecondLoop;
         public string indexVariableNameSecondLoop;
 
-        public ExplicitTwoLoopPostModel(string postValue, string arrayName, string parameterName)
+        public Type2TwoLoopPostModel(string postValue, string arrayName, string parameterName)
         {
             this.arrayName = arrayName;
             this.parameterName = parameterName;
@@ -28,7 +28,7 @@ namespace MenuStripGUI.Model
             this.expression = splitedPostValue[2];
             this.loopType = GetLoopType(firstLoopInformation, secondLoopInformation);
 
-            this.indexVariableName = ExplicitPostBaseModel.GetIndexVariableNameFromClause(
+            this.indexVariableName = Type2PostBaseModel.GetIndexVariableNameFromClause(
                 firstLoopInformation
                 .Split(new[] { "TH" }, StringSplitOptions.None)[0]
                 .Split(new[] { "(" }, StringSplitOptions.None)[1]);
@@ -36,7 +36,7 @@ namespace MenuStripGUI.Model
             this.startRange = firstLoopRange[0];
             this.endRange = firstLoopRange[1];
 
-            this.indexVariableNameSecondLoop = ExplicitPostBaseModel.GetIndexVariableNameFromClause(
+            this.indexVariableNameSecondLoop = Type2PostBaseModel.GetIndexVariableNameFromClause(
                 secondLoopInformation
                 .Split(new[] { "TH" }, StringSplitOptions.None)[0]);
             var secondLoopRange = GetLoopInformation(secondLoopInformation);

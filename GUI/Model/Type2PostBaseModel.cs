@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace MenuStripGUI.Model
 {
     public enum PostConditionType { VM, TT, VM_TT, VM_VM, TT_VM, TT_TT }
-    public abstract class ExplicitPostBaseModel
+    public abstract class Type2PostBaseModel
     {
         public PostConditionType loopType;
         public string arrayName;
@@ -20,15 +20,15 @@ namespace MenuStripGUI.Model
         public abstract List<string> GenerateLoopCode();
         public abstract void SplitStringAndGetProperty(string postValue);
 
-        public static ExplicitPostBaseModel GetExplicitPostModel(string postValue, string arrayName, string parameterName)
+        public static Type2PostBaseModel GetExplicitPostModel(string postValue, string arrayName, string parameterName)
         {
             postValue = ReplaceTwoDot(postValue);
 
             int numberOfLoop = postValue.Count(underscore => underscore == '_');
             if (numberOfLoop == 1)
-                return new ExplicitOneLoopPostModel(postValue, arrayName, parameterName);
+                return new Type2OneLoopPostModel(postValue, arrayName, parameterName);
             else
-                return new ExplicitTwoLoopPostModel(postValue, arrayName, parameterName);
+                return new Type2TwoLoopPostModel(postValue, arrayName, parameterName);
         }
 
 

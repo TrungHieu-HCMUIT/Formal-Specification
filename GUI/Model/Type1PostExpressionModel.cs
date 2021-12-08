@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace MenuStripGUI.Model
 {
-    public class ImplicitPostExpressionModel
+    public class Type1PostExpressionModel
     {
         public string executionExpression;
         public List<string> conditionExpressionList;
 
-        public ImplicitPostExpressionModel(string execution, List<string> conditionList)
+        public Type1PostExpressionModel(string execution, List<string> conditionList)
         {
             this.executionExpression = ChangeBooleanTextValue(execution);
             conditionExpressionList = conditionList;
