@@ -54,7 +54,7 @@ namespace MenuStripGUI.Model
             }
             else if (loopType == PostConditionType.TT)
             {
-                list.Add(string.Format("\t\t\t\t\tif| ({0})", codeExpression) + " return| true;");
+                list.Add(string.Format("\t\t\t\tif| ({0})|", codeExpression) + " return| true;");
             }
 
             list.Add("\t\t\t}");

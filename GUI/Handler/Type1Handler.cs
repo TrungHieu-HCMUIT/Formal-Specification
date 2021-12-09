@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MenuStripGUI.Handler
 {
-    class Type1Handler: BaseFormalLanguageHandler
+    class Type1Handler: BaseHandler
     {
         public List<Type1PostExpressionModel> implicitPostExpressionModelList;
 
@@ -86,7 +86,7 @@ namespace MenuStripGUI.Handler
             {
                 if (implicitPostExpressionModelList[0].conditionExpressionList.Count == 0)
                 {
-                    list.Add(string.Format("\t\t\t{0}", implicitPostExpressionModelList[0].GenerateExecutionScript()));
+                    list.Add(string.Format("\t\t\t{0}", implicitPostExpressionModelList[0].GenerateExecutionScript(FormalLanguageHelper.MapFormalLanguageTypeToPrimitiveType(outputMap.First().Value))));
                 }
             }
             else
@@ -94,7 +94,7 @@ namespace MenuStripGUI.Handler
                 foreach (Type1PostExpressionModel model in implicitPostExpressionModelList)
                 {
                     list.Add(string.Format("\t\t\t{0}", model.GenerateConditionScript()));
-                    list.Add(string.Format("\t\t\t\t{0}", model.GenerateExecutionScript()));
+                    list.Add(string.Format("\t\t\t\t{0}", model.GenerateExecutionScript("")));
                 }
             }
             list.Add(string.Format("\t\t\treturn| {0};", outputMap.First().Key));

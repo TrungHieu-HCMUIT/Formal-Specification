@@ -9,7 +9,7 @@ namespace MenuStripGUI.Handler
 {
     public enum FormalLanguageType { TYPE_1, TYPE_2 }
     public enum OutputFunctionFormatType { REF_FUNCTION_DECLARATION, VALUE_FUNCTION_DECLARATION, REF_FUNCTION_CALL, VALUE_FUNCTION_CALL }
-    public abstract class BaseFormalLanguageHandler
+    public abstract class BaseHandler
     {
         public FormalLanguageType typeID;
         public string functionInforLine;

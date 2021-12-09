@@ -11,7 +11,7 @@ namespace DataMapper
     {
         
         private static DataMapper instance;
-        public BaseFormalLanguageHandler handlerModel;
+        public BaseHandler handlerModel;
         public string exception = "";
 
         public static DataMapper Instance

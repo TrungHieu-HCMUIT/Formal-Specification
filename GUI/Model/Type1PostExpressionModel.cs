@@ -17,8 +17,16 @@ namespace MenuStripGUI.Model
             conditionExpressionList = conditionList;
         }
 
-        public string GenerateExecutionScript()
+        public string GenerateExecutionScript(string resultType)
         {
+            if (resultType != "")
+            {
+                int indexOfEqual = executionExpression.IndexOf("=");
+                string castString = string.Format(" (|{0}|)", resultType);
+                var castExecutionExpression = executionExpression.Insert(indexOfEqual + 1, castString);
+                return string.Format("|{0}|;", castExecutionExpression);
+            }      
+
             return string.Format("|{0}|;", executionExpression);
         }
 

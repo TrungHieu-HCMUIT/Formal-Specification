@@ -48,7 +48,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Handler\BaseFormalLanguageHandler.cs" />
+    <Compile Include="Handler\BaseHandler.cs" />
     <Compile Include="Handler\Type2Handler.cs" />
     <Compile Include="Handler\Type1Handler.cs" />
     <Compile Include="Handler\InputHandler.cs" />

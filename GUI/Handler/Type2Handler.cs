@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MenuStripGUI.Handler
 {
-    class Type2Handler : BaseFormalLanguageHandler
+    class Type2Handler : BaseHandler
     {
 
         public Type2Handler(string functionInforLine, string preConditionLine, string postConditionLine)
@@ -55,7 +55,7 @@ namespace MenuStripGUI.Handler
                 string type = FormalLanguageHelper.MapFormalLanguageTypeToPrimitiveType(pair.Value);
                 if (type == "int[]" || type == "double[]")
                 {
-                    string function = string.Format("\t\t\tConsole|.|WriteLine|(|\"Enter elements for input {0}\"|);", pair.Key);
+                    string function = string.Format("\t\t\tConsole|.|WriteLine|(|\"Enter elements for input {0}, please enter input in each line\"|);", pair.Key);
                     list.Add(function);
 
                     list.Add(string.Format("\t\t\t{0} = new {1}[{2}];", pair.Key, 

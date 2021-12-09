@@ -13,7 +13,7 @@ namespace MenuStripGUI.Handler
     {
         private static InputHandler instance;
 
-        public BaseFormalLanguageHandler handlerModel;
+        public BaseHandler handlerModel;
 
         public static InputHandler Instance
         {
@@ -76,7 +76,7 @@ namespace MenuStripGUI.Handler
                         }
                         else
                         {
-                            post += "\r\n       ~||~ " + PreHandleForInput(expressions[i]);
+                            post += "\r\n        ~||~ " + PreHandleForInput(expressions[i]);
                         }
                     }
                     post += ")";
