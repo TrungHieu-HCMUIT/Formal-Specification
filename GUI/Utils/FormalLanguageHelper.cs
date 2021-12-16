@@ -36,6 +36,8 @@ namespace MenuStripGUI.Utils
                     return "int[]";
                 case FormalLanguageDataType.INTEGER:
                     return "int";
+                case FormalLanguageDataType.ARRAY_OF_INTEGER:
+                    return "int[]";
                 case FormalLanguageDataType.RATIONAL:
                     return "double";
                 case FormalLanguageDataType.REAL:
